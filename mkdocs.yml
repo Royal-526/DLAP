@@ -10,6 +10,8 @@ edit_uri: 'tree/edit/docs'
 # Copyright
 copyright: Copyright &copy; 2020 Royal 526
 
+nav:
+
 # Configuration
 theme:
   name: material
