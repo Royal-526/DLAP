@@ -1,0 +1,64 @@
+# Project information
+site_name: Deep Learning in Action with PyTorch
+site_description: A Pratice Camp for Deep Learning
+site_author: Royal 526
+site_url: https://royal-526.github.io/dlap/
+
+# Copyright
+copyright: Copyright &copy; 2020 Royal 526
+
+# Configuration
+theme:
+  name: material
+  language: zh
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Extras
+# extra:
+#   social:
+#     - icon: fontawesome/brands/github-alt
+#       link: https://github.com/squidfunk
+#     - icon: fontawesome/brands/twitter
+#       link: https://twitter.com/squidfunk
+#     - icon: fontawesome/brands/linkedin
+#       link: https://linkedin.com/in/squidfunk
+
+# Google Analytics
+# google_analytics:
+#   - UA-XXXXXXXX-X
+#   - auto
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.tilde
+  - footnotes
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
