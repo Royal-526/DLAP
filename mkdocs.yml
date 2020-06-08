@@ -3,6 +3,9 @@ site_name: Deep Learning in Action with PyTorch
 site_description: A Pratice Camp for Deep Learning
 site_author: Royal 526
 site_url: https://royal-526.github.io/dlap/
+repo_name: DLAP
+repo_url: https://github.com/Royal-526/DLAP
+edit_uri: 'tree/edit/docs'
 
 # Copyright
 copyright: Copyright &copy; 2020 Royal 526
