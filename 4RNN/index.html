@@ -11,7 +11,7 @@
         <meta name="description" content="A Pratice Camp for Deep Learning">
       
       
-        <link rel="canonical" href="https://royal-526.github.io/dlap/1VSCode/">
+        <link rel="canonical" href="https://royal-526.github.io/dlap/4RNN/">
       
       
         <meta name="author" content="Royal 526">
@@ -21,7 +21,7 @@
     
     
       
-        <title>VSCode and Python - Deep Learning in Action with PyTorch</title>
+        <title>RNN - Deep Learning in Action with PyTorch</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vscode-and-python" class="md-skip">
+        <a href="#rnn" class="md-skip">
           跳转至
         </a>
       
@@ -91,7 +91,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              VSCode and Python
+              RNN
             
           </span>
         </div>
@@ -201,53 +201,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        VSCode and Python
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="VSCode and Python" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../1VSCode/" title="VSCode and Python" class="md-nav__link">
       VSCode and Python
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    资料汇总
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -279,11 +237,53 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../4RNN/" title="RNN" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        RNN
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="RNN" class="md-nav__link md-nav__link--active">
       RNN
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    资料汇总
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -397,7 +397,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Royal-526/DLAP/tree/edit/docs/1VSCode.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/Royal-526/DLAP/tree/edit/docs/4RNN.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -405,14 +405,32 @@
                   
                 
                 
-                <h1 id="vscode-and-python">VSCode and Python<a class="headerlink" href="#vscode-and-python" title="Permanent link">&para;</a></h1>
+                <h1 id="rnn">RNN<a class="headerlink" href="#rnn" title="Permanent link">&para;</a></h1>
 <h2 id="_1">资料汇总<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Python进阶讲解<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>RNN讲解slide<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>、video<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>,<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>、code<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>; word2vec slide<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>、video<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>、 paper<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://github.com/eastlakeside/interpy-zh/blob/master/SUMMARY.md">https://github.com/eastlakeside/interpy-zh/blob/master/SUMMARY.md</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/RNN%20(v2).pdf">http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/RNN%20(v2).pdf</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.bilibili.com/video/BV13x411v7US?p=36">https://www.bilibili.com/video/BV13x411v7US?p=36</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://www.bilibili.com/video/BV13x411v7US?p=37">https://www.bilibili.com/video/BV13x411v7US?p=37</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://colab.research.google.com/drive/16d1Xox0OW-VNuxDn1pvy2UXFIPfieCb9">https://colab.research.google.com/drive/16d1Xox0OW-VNuxDn1pvy2UXFIPfieCb9</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2017/Lecture/word2vec%20(v2).pdf">http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2017/Lecture/word2vec%20(v2).pdf</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://www.bilibili.com/video/BV13x411v7US?p=25">https://www.bilibili.com/video/BV13x411v7US?p=25</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://arxiv.org/pdf/1301.3781.pdf">https://arxiv.org/pdf/1301.3781.pdf</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -434,7 +452,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href=".." title="Welcome to DLAP" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../3CNN/" title="CNN" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -443,19 +461,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                Welcome to DLAP
+                CNN
               </div>
             </div>
           </a>
         
         
-          <a href="../2PyTorch/" title="PyTorch Intro" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../5CVPR/" title="CVPR: Cross-Modal Retrieval" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                PyTorch Intro
+                CVPR: Cross-Modal Retrieval
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
