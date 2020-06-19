@@ -6,17 +6,17 @@
 
 ## 时间安排
 
-时间        | 内容
------------| -----
-2020/6/12  | ~~MLP, CNN, Activation Function, Anaconda Usage, VSCode Intro, Intermediate Python Lang, PyTorch Intro~~
-2020/6/13  | More about PyTorch Usage (Dataset, DataLoader, torchvision)[^1], ~~Train a Classifier from Scratch, How to represent multi-modal data in NN?[^2]~~
-2020/6/14  | ~~RNN(LSTM, GRU), Word2Vec, CVPR Paper Review:  Deep Supervised Cross-Modal Retrieval~~
-2020/6/19  | CVPR Code Review:  Deep Supervised Cross-Modal Retrieval; Seq2seq
-2020/6/20  | Attention, Pointer Network
-2020/6/21  | Seq2seq code review; ACL Paper Review:  Fast Abstractive Summarization with Reinforce-Selected Sentence Rewriting
-2020/6/26  | Final Project 1: https://github.com/ChenRocks/fast_abs_rl
-2020/6/27  | Final Project 2: https://github.com/ChenRocks/fast_abs_rl
-2020/6/28  | Final Project 3: https://github.com/ChenRocks/fast_abs_rl
+时间        | 内容        | 视频
+-----------| ----- | -----
+2020/6/12  | ~~MLP, CNN, Activation Function, Anaconda Usage, VSCode Intro, Intermediate Python Lang, PyTorch Intro~~   | [video1](https://www.bilibili.com/video/BV1Xi4y1s77W?from=search&seid=8601937543047613715) [video2](https://www.bilibili.com/video/BV1ig4y1i7NN)
+2020/6/13  | More about PyTorch Usage (Dataset, DataLoader, torchvision)[^1], ~~Train a Classifier from Scratch, How to represent multi-modal data in NN?[^2]~~ |
+2020/6/14  | ~~RNN(LSTM, GRU), Word2Vec, CVPR Paper Review:  Deep Supervised Cross-Modal Retrieval~~ | [video1]()
+2020/6/19  | CVPR Code Review:  Deep Supervised Cross-Modal Retrieval; Seq2seq  |
+2020/6/20  | Attention, Pointer Network |
+2020/6/21  | Seq2seq code review; ACL Paper Review:  Fast Abstractive Summarization with Reinforce-Selected Sentence Rewriting  |
+2020/6/26  | Final Project 1: https://github.com/ChenRocks/fast_abs_rl  |
+2020/6/27  | Final Project 2: https://github.com/ChenRocks/fast_abs_rl  |
+2020/6/28  | Final Project 3: https://github.com/ChenRocks/fast_abs_rl  |
 
 
 [^1]: https://pytorch.org/tutorials/beginner/data_loading_tutorial.html?highlight=dataloader
