@@ -20,4 +20,4 @@
 
 
 [^1]: https://pytorch.org/tutorials/beginner/data_loading_tutorial.html?highlight=dataloader
-[^2]: ./assets/Python深度学习.pdf
+[^2]: [Python深度学习](./assets/Python深度学习.pdf)
