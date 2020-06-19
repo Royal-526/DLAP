@@ -8,7 +8,7 @@
 
 时间        | 内容
 -----------| -----
-2020/6/12  | MLP, CNN, Activation Function, Anaconda Usage, VSCode Intro, Intermediate Python Lang, PyTorch Intro
+2020/6/12  | _MLP, CNN, Activation Function, Anaconda Usage, VSCode Intro, Intermediate Python Lang, PyTorch Intro_
 2020/6/13  | More about PyTorch Usage (Dataset, DataLoader, torchvision), Train a Classifier from Scratch, How to represent multi-modal data in NN?
 2020/6/14  | RNN(LSTM, GRU), Word2Vec, CVPR Paper Review:  Deep Supervised Cross-Modal Retrieval
 2020/6/19  | CVPR Code Review:  Deep Supervised Cross-Modal Retrieval; Seq2seq
