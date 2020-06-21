@@ -370,7 +370,7 @@
 Input
 =====
 input_x: A Tensor with the shape in [batch_size, feature_size]
-method: A string indicate the similarity metric method, including cos, l1, and l2.
+method: A string indicates the similarity metric method, including cos, l1, and l2.
 
 Output
 ======
@@ -379,7 +379,8 @@ similarity_matrix: A Tensor with the shape in [batch_size, batch_size]
 
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Try to use the broadcast mechanism instead of using <code>for</code> loop to implement it.</p>
+<p>Try to use the broadcast mechanism instead of using <code>for</code> loop to implement it.
+You can use the <a href="../assets/broadcast_test.py">unitest script</a> to check your answer.</p>
 </div>
                 
               
