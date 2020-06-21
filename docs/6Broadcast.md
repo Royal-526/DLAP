@@ -3,12 +3,12 @@
 ## Exercises
 
 ```
-Calculate similarity matric with 3 different methods cos, l1, and l2
+Calculate similarity matrix with 3 different methods cos, l1, and l2
 
 Input
 =====
 input_x: A Tensor with the shape in [batch_size, feature_size]
-method: A string indicate the similarity metric method
+method: A string indicate the similarity metric method, including cos, l1, and l2.
 
 Output
 ======
