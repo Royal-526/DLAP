@@ -1,7 +1,6 @@
 import time
 import torch
 import unittest
-import logging
 
 from broadcast import pairwise_similarity, naive_pairwise_similarity
 
@@ -73,19 +72,18 @@ class TestResult(unittest.TestCase):
 
         naive_time = naive_e - naive_s
         broad_time = broad_e - broad_s
-        logger.info("Test time cost with the input tensor with %s, naive for loop: %.4f, broadcast: %.4f", input_x.size(), naive_time, broad_time)
         return naive_time, broad_time
 
     def test_small_time(self):
         naive_t, broad_t = self.time(self.input)
+        print("\nTest time cost with the input tensor with %s, naive for loop: %.4f, broadcast: %.4f\n" % (self.input.size(), naive_t, broad_t))
         self.assertLess(broad_t, naive_t)
 
     def test_big_time(self):
         naive_t, broad_t = self.time(self.big_input)
+        print("\nTest time cost with the input tensor with %s, naive for loop: %.4f, broadcast: %.4f\n" % (self.input.size(), naive_t, broad_t))
         self.assertLess(broad_t, naive_t)
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
-    logger = logging.getLogger(__name__)
     unittest.main()
