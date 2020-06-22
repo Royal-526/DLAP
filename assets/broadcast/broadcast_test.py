@@ -81,7 +81,7 @@ class TestResult(unittest.TestCase):
 
     def test_big_time(self):
         naive_t, broad_t = self.time(self.big_input)
-        print("\nTest time cost with the input tensor with %s, naive for loop: %.4f, broadcast: %.4f\n" % (self.input.size(), naive_t, broad_t))
+        print("\nTest time cost with the input tensor with %s, naive for loop: %.4f, broadcast: %.4f\n" % (self.big_input.size(), naive_t, broad_t))
         self.assertLess(broad_t, naive_t)
 
 
