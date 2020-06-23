@@ -11,6 +11,7 @@ class TestResult(unittest.TestCase):
         self.input[1, :] = -1
         self.input[2, :] = 0
 
+        self.random_input = torch.randn(100, 50)
         self.big_input = torch.randn(200, 20)
 
     def test_naive_cos(self):
@@ -52,6 +53,11 @@ class TestResult(unittest.TestCase):
                                [8.9443, 0.0000, 4.4721],
                                [4.4721, 4.4721, 0.0000]])
         self.assertTrue(torch.allclose(pairwise_similarity(self.input, 'l2'), result))
+
+    def test_equal(self):
+        self.assertTrue(torch.allclose(pairwise_similarity(self.random_input, 'l2'), naive_pairwise_similarity(self.random_input, 'l2')))
+        self.assertTrue(torch.allclose(pairwise_similarity(self.random_input, 'cos'), naive_pairwise_similarity(self.random_input, 'cos')))
+        self.assertTrue(torch.allclose(pairwise_similarity(self.random_input, 'l1'), naive_pairwise_similarity(self.random_input, 'l1')))
 
     def test_error(self):
         with self.assertRaises(ValueError):
