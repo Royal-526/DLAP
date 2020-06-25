@@ -19,6 +19,8 @@ similarity_matrix: A Tensor with the shape in [batch_size, batch_size]
     Try to use the broadcast mechanism instead of using `for` loop to implement it.
 
 ### For Loop 实现
+为了方便理解任务需求，可以阅读基于`for`循环实现的代码。
+
 ```python
 import torch
 
@@ -64,7 +66,7 @@ def naive_pairwise_similarity(input_x: torch.Tensor, method: str) -> torch.Tenso
 ```
 
 ### 练习文件
-[broadcast](./assets/broadcast/broadcast.py), [test script](./assets/broadcast/broadcast_test.py)
+[broadcast待实现文件](./assets/broadcast/broadcast.py), [test script](./assets/broadcast/broadcast_test.py)
 
 ### 本地测试
 将下载的两个文件置于同一个文件下，切换到文件所在目录与所需的python环境后，完成`broadcast.py`中对应的函数，如下图所示：
