@@ -436,6 +436,7 @@ similarity_matrix: A Tensor with the shape in [batch_size, batch_size]
 <p>Try to use the broadcast mechanism instead of using <code>for</code> loop to implement it.</p>
 </div>
 <h3 id="for-loop">For Loop 实现<a class="headerlink" href="#for-loop" title="Permanent link">&para;</a></h3>
+<p>为了方便理解任务需求，可以阅读基于<code>for</code>循环实现的代码。</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
 
 <span class="k">def</span> <span class="nf">naive_pairwise_similarity</span><span class="p">(</span><span class="n">input_x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
@@ -480,7 +481,7 @@ similarity_matrix: A Tensor with the shape in [batch_size, batch_size]
 </code></pre></div>
 
 <h3 id="_1">练习文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><a href="../assets/broadcast/broadcast.py">broadcast</a>, <a href="../assets/broadcast/broadcast_test.py">test script</a></p>
+<p><a href="../assets/broadcast/broadcast.py">broadcast待实现文件</a>, <a href="../assets/broadcast/broadcast_test.py">test script</a></p>
 <h3 id="_2">本地测试<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>将下载的两个文件置于同一个文件下，切换到文件所在目录与所需的python环境后，完成<code>broadcast.py</code>中对应的函数，如下图所示：</p>
 <p><img alt="" src="../assets/broadcast/test1.jpg" /></p>
