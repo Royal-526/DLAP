@@ -78,3 +78,36 @@ def naive_pairwise_similarity(input_x: torch.Tensor, method: str) -> torch.Tenso
 ![](./assets/broadcast/test2.jpg)
 
 可以看到使用`for`实现的函数远远不如广播机制来的高效。
+
+### 可能的答案
+
+??? note "pairwise_similarity"
+    ```python
+    def pairwise_similarity(input_x: torch.Tensor, method: str) -> torch.Tensor:
+        '''
+        Calculate similarity matrix with 3 different methods cos, l1, and l2
+
+        Input
+        =====
+        input_x: A Tensor with the shape in [batch_size, feature_size]
+        method: A string indicate the similarity metric method
+
+        Output
+        ======
+        similarity_matrix: A Tensor with the shape in [batch_size, batch_size]
+        '''
+        method_list = ('cos', 'l1', 'l2')
+        if method not in method_list:
+            raise ValueError(f'only support method in {method_list}')
+        # TODO: Finish your code here
+        batch_size = input_x.size(0)
+        similarity_matrix = torch.zeros(batch_size, batch_size)
+        if method == 'l1':
+            similarity_matrix = ((input_x.unsqueeze(0) - input_x.unsqueeze(1)).abs()).sum(-1)
+        elif method == 'l2':
+            similarity_matrix = torch.sqrt(((input_x.unsqueeze(0) - input_x.unsqueeze(2))**2).sum(-1))
+        elif method == 'cos':
+            similarity_matrix = (input_x.unsqueeze(0)*input_x.unsqueeze(1))/(input_x.unsqueeze(0)*input_x.unsqueeze(0))
+
+        return similarity_matrix
+    ```
