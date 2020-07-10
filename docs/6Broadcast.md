@@ -96,18 +96,27 @@ def naive_pairwise_similarity(input_x: torch.Tensor, method: str) -> torch.Tenso
         ======
         similarity_matrix: A Tensor with the shape in [batch_size, batch_size]
         '''
-        method_list = ('cos', 'l1', 'l2')
-        if method not in method_list:
-            raise ValueError(f'only support method in {method_list}')
-        # TODO: Finish your code here
-        batch_size = input_x.size(0)
-        similarity_matrix = torch.zeros(batch_size, batch_size)
-        if method == 'l1':
-            similarity_matrix = ((input_x.unsqueeze(0) - input_x.unsqueeze(1)).abs()).sum(-1)
-        elif method == 'l2':
-            similarity_matrix = torch.sqrt(((input_x.unsqueeze(0) - input_x.unsqueeze(2))**2).sum(-1))
-        elif method == 'cos':
-            similarity_matrix = (input_x.unsqueeze(0)*input_x.unsqueeze(1))/(input_x.unsqueeze(0)*input_x.unsqueeze(0))
 
+        method_list = ('cos', 'l1', 'l2')
+
+        x = input_x.unsqueeze(0)
+        y = input_x.unsqueeze(1)
+        eps = 1e-23
+
+        similarity_matrix = None
+        if method == 'cos':
+            inner_product = (x * y).sum(dim=-1)  # [b, b]
+            x_norm = x.square().sum(dim=-1).sqrt()  # [1, b]
+            y_norm = y.square().sum(dim=-1).sqrt()  # [b, 1]
+            norm_product = x_norm * y_norm  # [b, b]
+            similarity_matrix = inner_product / (norm_product + eps)
+        elif method == 'l1':
+            sub = x - y  # [b, b, f]
+            similarity_matrix = sub.abs().sum(dim=-1)
+        elif method == 'l2':
+            sub = x - y  # [b, b, f]
+            similarity_matrix = sub.square().sum(dim=-1).sqrt()
+        else:
+            raise ValueError("only support method in {}".format(method_list))
         return similarity_matrix
     ```
