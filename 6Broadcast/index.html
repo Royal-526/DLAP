@@ -326,6 +326,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    可能的答案
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -388,6 +395,13 @@
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     本地测试
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    可能的答案
   </a>
   
 </li>
@@ -488,6 +502,37 @@ similarity_matrix: A Tensor with the shape in [batch_size, batch_size]
 <p>直接运行<code>python broadcast_test.py</code>进行测试，这个脚本会测试计算结果的正确性以及耗时，通过测试后得到的结果如图所示：</p>
 <p><img alt="" src="../assets/broadcast/test2.jpg" /></p>
 <p>可以看到使用<code>for</code>实现的函数远远不如广播机制来的高效。</p>
+<h3 id="_3">可能的答案<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<details class="note"><summary>pairwise_similarity</summary><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pairwise_similarity</span><span class="p">(</span><span class="n">input_x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Calculate similarity matrix with 3 different methods cos, l1, and l2</span>
+
+<span class="sd">    Input</span>
+<span class="sd">    =====</span>
+<span class="sd">    input_x: A Tensor with the shape in [batch_size, feature_size]</span>
+<span class="sd">    method: A string indicate the similarity metric method</span>
+
+<span class="sd">    Output</span>
+<span class="sd">    ======</span>
+<span class="sd">    similarity_matrix: A Tensor with the shape in [batch_size, batch_size]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">method_list</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;cos&#39;</span><span class="p">,</span> <span class="s1">&#39;l1&#39;</span><span class="p">,</span> <span class="s1">&#39;l2&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">method_list</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;only support method in </span><span class="si">{</span><span class="n">method_list</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="c1"># TODO: Finish your code here</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="n">input_x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;l1&#39;</span><span class="p">:</span>
+        <span class="n">similarity_matrix</span> <span class="o">=</span> <span class="p">((</span><span class="n">input_x</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">input_x</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">abs</span><span class="p">())</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;l2&#39;</span><span class="p">:</span>
+        <span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">input_x</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">input_x</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;cos&#39;</span><span class="p">:</span>
+        <span class="n">similarity_matrix</span> <span class="o">=</span> <span class="p">(</span><span class="n">input_x</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="n">input_x</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">input_x</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="n">input_x</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">similarity_matrix</span>
+</code></pre></div>
+
+</details>
                 
               
               

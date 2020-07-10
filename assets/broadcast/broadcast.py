@@ -17,7 +17,8 @@ def naive_pairwise_similarity(input_x: torch.Tensor, method: str) -> torch.Tenso
     '''
 
     method_list = ('cos', 'l1', 'l2')
-    if method not in method_list: raise ValueError("only support method in {}".format(method_list))
+    if method not in method_list: 
+        raise ValueError("only support method in {}".format(method_list))
     eps = 1e-23
 
     batch_size = input_x.size(0)
@@ -55,6 +56,18 @@ def pairwise_similarity(input_x: torch.Tensor, method: str) -> torch.Tensor:
     ======
     similarity_matrix: A Tensor with the shape in [batch_size, batch_size]
     '''
-
+    method_list = ('cos', 'l1', 'l2')
+    if method not in method_list: 
+        raise ValueError(f'only support method in {method_list}')
     # TODO: Finish your code here
-    raise NotImplementedError
+    batch_size = input_x.size(0)
+    similarity_matrix = torch.zeros(batch_size, batch_size)
+    if method == 'l1':
+        similarity_matrix = ((input_x.unsqueeze(0) - input_x.unsqueeze(1)).abs()).sum(-1)
+    elif method == 'l2':
+        similarity_matrix = torch.sqrt(((input_x.unsqueeze(0) - input_x.unsqueeze(2))**2).sum(-1))
+    elif method == 'cos':
+        similarity_matrix = (input_x.unsqueeze(0)*input_x.unsqueeze(1))/(input_x.unsqueeze(0)*input_x.unsqueeze(0))
+
+    return similarity_matrix
+    
